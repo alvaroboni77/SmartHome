@@ -7,8 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.List;
-
+import es.upm.miw.smarthome.es.upm.miw.smarthome.weather.Weather;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -37,22 +36,22 @@ public class MainActivity extends Activity {
 
     public void obtenerInfoCiudad(View v) {
 
-        Call<City> call_async = apiService.getCityByName("Madrid", "2a52105ca37cda07e6341b5ef371c288");
+        Call<Weather> call_async = apiService.getCityByName();
 
-        call_async.enqueue(new Callback<City>() {
+        call_async.enqueue(new Callback<Weather>() {
 
             @Override
-            public void onResponse(Call<City> call, Response<City> response) {
-                City city = response.body();
-                if (null != city) {
-                tvRespuesta.append(city.getName() + "] "+city.getWind()+"\n\n");
+            public void onResponse(Call<Weather> call, Response<Weather> response) {
+                Weather weather = response.body();
+                if (null != weather) {
+                tvRespuesta.append(weather.getName() + ": "+ weather.getWind()+"\n\n");
                 } else {
                     tvRespuesta.setText("No se han recuperado datos");
                 }
             }
 
             @Override
-            public void onFailure(Call<City> call, Throwable t) {
+            public void onFailure(Call<Weather> call, Throwable t) {
                 Toast.makeText(
                         getApplicationContext(),
                         "ERROR: " + t.getMessage(),
