@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">SmartHome</string>
+    <string name="logout_button">Logout</string>
+    <string name="firebase_user_fmt">Firebase User: %s</string>
+    <string name="signed_in">Signed in!</string>
+    <string name="signed_out">Signed out!</string>
+    <string name="signed_cancelled">Signed in cancelled</string>
+    <string name="opc_signout">Sign out</string>
+    <string name="record">Record</string>
+    <string name="recordText">Record</string>
 </resources>

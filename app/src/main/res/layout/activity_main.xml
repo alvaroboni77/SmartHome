@@ -24,6 +24,13 @@
             android:src="@android:drawable/ic_menu_search"
             android:contentDescription="Boton recuperar datos"
             android:onClick="obtenerInfoCiudad" />
+        <Button
+            android:id="@+id/logoutButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:contentDescription="Boton logout"
+            android:text="@string/logout_button" />
     </LinearLayout>
 
     <ScrollView
